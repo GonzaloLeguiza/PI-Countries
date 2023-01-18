@@ -1,0 +1,12 @@
+.linkCreate{
+    text-decoration: none;
+    font-size: 1.5rem;
+    border: 1px white solid;
+    padding: 5px;
+    border-radius: 40px;
+    color: white;
+}
+.containerPrincipal{
+    background-image: url('../img/mapa-mundo-2.jpg');
+    
+}

@@ -1,0 +1,9 @@
+.paginado{
+    align-items: center;
+    background-color: rgba(152, 152, 152, 0.435);
+    display:flex;
+    justify-content:space-around;
+    list-style:none;
+    height: 3rem;
+    border-radius: 20px;
+  }
