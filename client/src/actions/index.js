@@ -2,9 +2,12 @@ import axios from 'axios';
 
 export const POST_ACTIVITY = 'POST_ACTIVITY';
 
+const url = 'https://pi-countries-production-99ed.up.railway.app';
+// const url = 'http://localhost:3001';
+
 export function getCountries(){
     return async function(dispatch){
-        let json = await axios.get(`http://localhost:3001/countries`);
+        let json = await axios.get(`${url}/countries`);
         return dispatch({
             type:'GET_COUNTRIES',
             payload: json.data
@@ -21,7 +24,7 @@ export function sortCountryPob(order){
 export function getCountryByName(name){
     return async function(dispatch){
         try{
-            let json = await axios.get(`http://localhost:3001/countries?name=${name}`)
+            let json = await axios.get(`${url}/countries?name=${name}`)
             return dispatch({
                 type:'GET_COUNTRY_NAME',
                 payload: json.data
@@ -58,7 +61,7 @@ export function filterActivity(activities){
 export function getActivities(payload){
     return async function(dispatch){
         //nose si poner let o const
-        let json = await axios.get(`http://localhost:3001/activities`);
+        let json = await axios.get(`${url}/activities`);
         return dispatch({
             type:'GET_ACTIVITIES',
             payload: json.data
@@ -68,7 +71,7 @@ export function getActivities(payload){
 export function postActivities(payload){
     return async function (dispatch){
                 //nose si poner let o const
-        const response = await axios.post(`http://localhost:3001/activities`,payload);
+        const response = await axios.post(`${url}/activities`,payload);
         console.log(response)
         return response
         
@@ -85,7 +88,7 @@ export function filterContinent(continent){
 export function getDetail (id){
     return async function(dispatch){
         try{
-            var json = await axios.get(`http://localhost:3001/countries/${id}`)
+            var json = await axios.get(`${url}/countries/${id}`)
                 return dispatch({
                     type: 'GET_DETAIL',
                     payload : json.data
